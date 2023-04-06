@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73c907669d14b7547946af36592089fd, type: 3}
+  m_Name: Turret
+  m_EditorClassIdentifier: 
+  _id: 0
+  _openingProgress: 100
+  _type: 0
+  _targetMask:
+    serializedVersion: 2
+    m_Bits: 256
+  _name: Turret
+  _hp: 0
+  _fieldOfView: 25
+  _detectionInterval: 2
+  _rateOfFire: 1
+  _timeToTurn: 100
+  _projectileType: 1
+  _rechargeTime: 5
+  _model: {fileID: 8665750808468849420, guid: c0e0e41a9a69219459d3dd9f536ace33, type: 3}
+  _sprite: {fileID: 21300000, guid: d2db598f2838d3a4988e39e6c3709070, type: 3}
