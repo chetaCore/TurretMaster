@@ -1,7 +1,13 @@
-﻿using UnityEngine;
+﻿using Assets.Game.Scripts.Entity.BaseEntityScripts;
+using UnityEngine;
 
 public class ProjectileData : ScriptableObject
 {
+    [SerializeField] private UserType _usertype;
+
+    public UserType Usertype
+    { get { return _usertype; } }
+
     [SerializeField] private ProjectileType _type;
 
     public ProjectileType Type

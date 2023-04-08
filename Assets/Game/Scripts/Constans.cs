@@ -7,6 +7,8 @@ namespace Assets.Game.Scripts
         public const float Epsilon = 0.001f;
         public const float MaxValueOpeningProgress = 100f;
         public const string TurretSaveOpenProgressName = "Turret";
+        public const string StageStarerName = "StageStarter";
+        public const string PlayerSpawnPoint = "PlayerSpawnPoint";
         public const float TurretOpeningFactor = 1f;
 
         public static Color ClosedColor { get => Color.black; }
@@ -41,6 +43,9 @@ namespace Assets.Game.Scripts
 
         //BulletPath
         public const string ProjectilePath = "Prefabs/Entity/Bullet/Projectile";
+
+        //EnemyProjectilePath
+        public const string EnemyProjectilePath = "Prefabs/Entity/Bullet/EnemyProjectile";
 
         //EnemyPath
         public const string EnemyPath = "Prefabs/Entity/Enemy/Enemy";

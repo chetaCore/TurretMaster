@@ -107,27 +107,39 @@ namespace Assets.Game.Scripts.Infrastructure.GameFactory
 
         public Bullet CreateBullet(Vector3 spawnPosition, ProjectileType bulletType)
         {
-            BulletData data = null;
+            BulletData Bulletdata = null;
             foreach (var bulletData in _settings.Projectiles)
             {
                 if (bulletData.Type == bulletType)
-                    data = (BulletData)bulletData;
+                    Bulletdata = (BulletData)bulletData;
             }
 
-            if (data == null)
+            if (Bulletdata == null)
                 Debug.Log("Bullet Data = null");
 
-            var bulletInstance = _assets.Instantiate(Constans.ProjectilePath, spawnPosition).AddComponent<Bullet>();
+            Bullet bulletInstance = null;
+
+            if (Bulletdata.Usertype == UserType.Turret)
+            {
+                bulletInstance = _assets.Instantiate(Constans.ProjectilePath, spawnPosition).AddComponent<Bullet>();
+            }
+            else if (Bulletdata.Usertype == UserType.Enemy)
+            {
+                bulletInstance = _assets.Instantiate(Constans.EnemyProjectilePath, spawnPosition).AddComponent<Bullet>();
+            }
 
             bulletInstance.Rigidbody = bulletInstance.AddComponent<Rigidbody>();
             bulletInstance.Rigidbody.useGravity = false;
+            bulletInstance.Rigidbody.freezeRotation = true;
 
-            bulletInstance.Speed = data.Speed;
-            bulletInstance.Damage = data.Damage;
-            bulletInstance.TargetMask = data.TargetMask;
-            var bulletModel = bulletInstance.SetModel(data.Model);
+            bulletInstance.AddComponent<SphereCollider>();
+
+            bulletInstance.Speed = Bulletdata.Speed;
+            bulletInstance.Damage = Bulletdata.Damage;
+            bulletInstance.TargetMask = Bulletdata.TargetMask;
+            var bulletModel = bulletInstance.SetModel(Bulletdata.Model);
             bulletModel.transform.rotation = new Quaternion(0, 0, 0, 0);
-            bulletInstance.LifeTime = data.LifeTime;
+            bulletInstance.LifeTime = Bulletdata.LifeTime;
 
             return bulletInstance;
         }

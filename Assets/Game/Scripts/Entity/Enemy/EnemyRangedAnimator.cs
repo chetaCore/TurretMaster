@@ -14,7 +14,6 @@ namespace Assets.Game.Scripts.Entity.Enemy
 
             foreach (AnimationClip clip in clips)
             {
-                print(clip.name);
                 if (clip.name == AttackAnimationName)
                 {
                     _animator.SetTrigger(Attack);

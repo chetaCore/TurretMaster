@@ -1,4 +1,5 @@
-﻿using Assets.Game.Scripts.Services.GameLoopService;
+﻿using Assets.Game.Scripts.GamePlay;
+using Assets.Game.Scripts.Services.GameLoopService;
 using Assets.Game.Scripts.Services.SpawnService;
 using UnityEngine;
 
@@ -37,7 +38,20 @@ namespace Assets.Game.Scripts.Services.GameObjectKeeperService
                     return;
                 }
                 else
+                {
+                    foreach (var stage in GameObject.FindGameObjectsWithTag(Constans.StageStarerName))
+                    {
+                        var currentStage = stage.GetComponent<StageStarter>();
+
+                        if (currentStage.Id == _spawnEnemyServise.CurrentStage)
+                        {
+                            currentStage.IsActive = true;
+                            break;
+                        }
+                        Debug.Log("Stage not found");
+                    }
                     _gameLoopService.ChangeGameLoopState(GameLoopState.StageEnded);
+                }
         }
     }
 }

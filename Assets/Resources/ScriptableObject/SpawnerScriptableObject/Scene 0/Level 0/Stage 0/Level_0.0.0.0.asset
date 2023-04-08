@@ -19,9 +19,7 @@ MonoBehaviour:
     Stage: 0
   _typeAndQualities:
   - Type: 1
-    Quality: 3
-  - Type: 0
-    Quality: 4
+    Quality: 1
   - Type: 1
-    Quality: 2
+    Quality: 1
   _spawnDelay: 1

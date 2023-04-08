@@ -16,6 +16,9 @@ MonoBehaviour:
   _targetMask:
     serializedVersion: 2
     m_Bits: 256
+  _ignoreMask:
+    serializedVersion: 2
+    m_Bits: 576
   _damage: 0.1
   _width: 0.1
   _length: 25

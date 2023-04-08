@@ -275,7 +275,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c85466896d681e34a9e538e906bfb69e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _descentSpeed: 10
+  _descentSpeed: 20
   CanDescent: 0
 --- !u!114 &8564240838281251614
 MonoBehaviour:
@@ -424,6 +424,27 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Type
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7536004941675501570, guid: 67f9bbb7e7cad0247a704c19ba51ab96,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5b0b65938b17bcb4c85c5e8da69c7c79,
+        type: 3}
+    - target: {fileID: 7536004941675501570, guid: 67f9bbb7e7cad0247a704c19ba51ab96,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7536004941675501570, guid: 67f9bbb7e7cad0247a704c19ba51ab96,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7536004941675501570, guid: 67f9bbb7e7cad0247a704c19ba51ab96,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7536004941675501570, guid: 67f9bbb7e7cad0247a704c19ba51ab96,
         type: 3}

@@ -52,6 +52,7 @@ namespace Assets.Game.Scripts.State.CharacterState
         public void Exit()
         {
             _characterMover.CanMove = false;
+            _characterMover.Controller.Move(Vector3.zero);
         }
     }
 }

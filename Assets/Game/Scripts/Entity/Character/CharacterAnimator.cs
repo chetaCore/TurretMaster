@@ -13,7 +13,7 @@ namespace Assets.Game.Scripts.Entity.Character
 
         public CharacterMover CharacterMover { get => _characterMover; set => _characterMover = value; }
 
-        private void SetMoveSpeed(float speed)
+        public void SetMoveSpeed(float speed)
         {
             _animator.SetFloat(Speed, speed);
         }

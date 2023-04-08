@@ -6,19 +6,20 @@ TagManager:
   tags:
   - PlayerSpawnPoint
   - Spawn
+  - StageStarter
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Projectile
+  - 
   - Water
   - UI
   - Player
   - Ground
   - Enemy
-  - 
-  - 
-  - 
+  - Turret
+  - EnemyProjectile
+  - TurretProjectile
   - 
   - 
   - 

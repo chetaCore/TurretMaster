@@ -5,6 +5,7 @@
         VaitingStartGame,
         GameStarted,
         StageEnded,
+        VaitingNextStage,
         StageStarted,
         Defeat,
         Victory,

@@ -32,7 +32,7 @@ namespace Assets.Game.Scripts.State.EnemyState.RangedEnemyState
 
             _enemyAimer.Target = _enemyObserver.DetectedColliders[0].transform;
 
-            DOTween.Sequence().AppendInterval(_enemyAttacker.Weapon.RateOfFire).
+            _vaitSeq.AppendInterval(_enemyAttacker.Weapon.RateOfFire).
                 OnComplete(() => _enemyStateMachine.Enter<EnemyRangedMovingState>());
         }
 

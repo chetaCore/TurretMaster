@@ -46,6 +46,11 @@ namespace Assets.Game.Scripts.Entity.Bullet
 
         private void OnCollisionEnter(Collision collision)
         {
+            Hit(collision);
+        }
+
+        private void Hit(Collision collision)
+        {
             if ((_targetMask & (1 << collision.gameObject.layer)) != 0)
             {
                 if (collision.gameObject.TryGetComponent(out IDamageTaker damageTaker))
@@ -56,16 +61,9 @@ namespace Assets.Game.Scripts.Entity.Bullet
                 diedSeq.Kill();
                 Destroy(gameObject);
             }
-            if (collision.gameObject.layer != gameObject.layer)
-            {
-                Destroy(gameObject);
-                diedSeq.Kill();
-            }
 
-        }
-
-        private void Hit()
-        {
+            Destroy(gameObject);
+            diedSeq.Kill();
         }
     }
 }

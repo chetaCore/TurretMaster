@@ -8,7 +8,7 @@ namespace Assets.Game.Scripts.Entity.BaseEntityScripts
         [SerializeField] private Transform _rayOrigin;
 
         private GameObject _entity;
-        private readonly float _raycastDistance = 0.1f;
+        private readonly float _raycastDistance = 1f;
 
         public bool CanDetected;
         public bool EntityOnGround;

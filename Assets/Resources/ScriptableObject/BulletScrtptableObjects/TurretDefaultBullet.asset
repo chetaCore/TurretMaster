@@ -16,7 +16,10 @@ MonoBehaviour:
   _targetMask:
     serializedVersion: 2
     m_Bits: 256
+  _ignoreMask:
+    serializedVersion: 2
+    m_Bits: 576
+  _damage: 10
   _speed: 20
   _lifeTime: 3
-  _damage: 10
   _model: {fileID: 4766299865550456075, guid: 40b784baed783094986bfe7cb34d9fa7, type: 3}

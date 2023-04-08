@@ -33,7 +33,7 @@ namespace Assets.Game.Scripts.UI.Popups
 
         private void StartNextStage()
         {
-            _gameLoopService.ChangeGameLoopState(GameLoopState.StageStarted);
+             _gameLoopService.ChangeGameLoopState(GameLoopState.VaitingNextStage);
             _popupGroup.SetActive(false);
         }
 
