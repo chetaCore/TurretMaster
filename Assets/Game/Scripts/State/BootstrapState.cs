@@ -7,6 +7,7 @@ using Assets.Game.Scripts.Services.OpenTurretService;
 using Assets.Game.Scripts.Services.PoolService;
 using Assets.Game.Scripts.Services.SavesService;
 using Assets.Game.Scripts.Services.SpawnService;
+using Assets.Game.Scripts.Services.VirtualCamerasService;
 using UnityEngine;
 
 namespace Assets.Game.Scripts.State
@@ -56,6 +57,7 @@ namespace Assets.Game.Scripts.State
             _services.RegisterSingle<ISpawnEnemyService>(new SpawnEnemyService());
             _services.RegisterSingle<IGameObjectKeeperService>(new GameObjectKeeperService());
             _services.RegisterSingle<IOpenTurretService>(new OpenTurretService());
+            _services.RegisterSingle<IVirtualsCamerasService>(new VirtualsCamerasService());
         }
 
         private static IInputService InputService()

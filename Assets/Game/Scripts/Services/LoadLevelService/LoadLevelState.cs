@@ -2,6 +2,7 @@
 using Assets.Game.Scripts.Infrastructure.LevelTest;
 using Assets.Game.Scripts.Services;
 using Assets.Game.Scripts.Services.GameObjectKeeperService;
+using Assets.Game.Scripts.Services.VirtualCamerasService;
 using UnityEngine;
 using static Assets.Game.Scripts.State.GameStateMachine;
 
@@ -40,7 +41,8 @@ namespace Assets.Game.Scripts.State
             _gameFactory.CreateStartPopup();
             _gameFactory.CreateStagePopup();
             _gameFactory.CreateVictoryPopup();
-
+            AllServices.Container.Single<IVirtualsCamerasService>().CreateCameras();
+           
             _stateMachine.Enter<GameLoopState>();
         }
 

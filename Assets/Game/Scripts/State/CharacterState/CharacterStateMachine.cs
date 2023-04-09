@@ -29,6 +29,9 @@ namespace Assets.Game.Scripts.State.CharacterState
 
                 [typeof(CharacterDeathState)] =
                 gameObject.AddComponent<CharacterDeathState>().Initialize(this),
+
+                [typeof(CharacterDanceState)] =
+                gameObject.AddComponent<CharacterDanceState>().Initialize(this, animator),
             };
 
             _character.DeathEvent += () => Enter<CharacterDeathState>();
@@ -36,7 +39,7 @@ namespace Assets.Game.Scripts.State.CharacterState
 
         private void Start()
         {
-            Enter<CharacterDeathState>();
+            Enter<CharacterDanceState>();
         }
 
         private void OnDestroy()

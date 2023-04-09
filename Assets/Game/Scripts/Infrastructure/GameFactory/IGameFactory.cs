@@ -18,5 +18,6 @@ namespace Assets.Game.Scripts.Infrastructure.GameFactory
         GameObject CreateStagePopup();
         GameObject CreateVictoryPopup();
         Laser CreateLaser(Vector3 spawnPosition, ProjectileType projectileType);
+        GameObject CreateVirtualsCameras();
     }
 }

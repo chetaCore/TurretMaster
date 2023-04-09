@@ -10,6 +10,7 @@ namespace Assets.Game.Scripts.Entity.Character
         private static readonly int Speed = Animator.StringToHash("Speed");
         private static readonly int Install = Animator.StringToHash("TurretInstall");
         private static readonly int Idle = Animator.StringToHash("Idle");
+        private static readonly int Dance = Animator.StringToHash("Dance");
 
         public CharacterMover CharacterMover { get => _characterMover; set => _characterMover = value; }
 
@@ -27,6 +28,12 @@ namespace Assets.Game.Scripts.Entity.Character
         {
             _animator.SetTrigger(Idle);
         }
+
+        public void PlayDance()
+        {
+            _animator.SetTrigger(Dance);
+        }
+
 
         private void Update()
         {
