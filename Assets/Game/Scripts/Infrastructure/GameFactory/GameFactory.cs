@@ -13,7 +13,7 @@ using UnityEngine;
 
 namespace Assets.Game.Scripts.Infrastructure.GameFactory
 {
-    public partial class GameFactory : IGameFactory
+    public class GameFactory : IGameFactory
     {
         private readonly IAssetProvider _assets;
         private GameFactorySettings _settings;
@@ -307,5 +307,8 @@ namespace Assets.Game.Scripts.Infrastructure.GameFactory
 
         public GameObject CreateVictoryPopup() =>
            _assets.Instantiate(Constans.VictoryPopupPath);
+
+        public GameObject CreateVirtualsCameras() =>
+            _assets.Instantiate(Constans.VirtualsCamerasPath);
     }
 }

@@ -9,6 +9,7 @@ namespace Assets.Game.Scripts
         public const string TurretSaveOpenProgressName = "Turret";
         public const string StageStarerName = "StageStarter";
         public const string PlayerSpawnPoint = "PlayerSpawnPoint";
+        public static string LevelPlayerPoint = "LevelPlayerPoint";
         public const float TurretOpeningFactor = 1f;
 
         public static Color ClosedColor { get => Color.black; }
@@ -55,6 +56,9 @@ namespace Assets.Game.Scripts
 
         //ErrorModel
         public const string ErrorModelPath = "ErrorModel/ErrorModel";
+
+        //ErrorModel
+        public const string VirtualsCamerasPath = "Prefabs/VirtualsCameras/VCameras";
 
         #endregion ObjectPath
 
