@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: LevelLoadData
   m_EditorClassIdentifier: 
   _scenesAndLevels:
-  - Scene: {fileID: 102900000, guid: 99c9720ab356a0642a771bea13969a05, type: 3}
+  - Scene: Scene0
     Levels:
     - {fileID: 7933318349084189571, guid: 57606e3353f93474fa707b9edb26da9c, type: 3}
     - {fileID: 1604146361756282014, guid: 35202d8547600534bb6ce7045e7e2414, type: 3}
     - {fileID: 1604146361756282014, guid: 77bac166acf5a314ea230af3ea16901b, type: 3}
-  - Scene: {fileID: 102900000, guid: d1efd730d5b8ddf479d994f4bbf12f0f, type: 3}
+  - Scene: Scene1
     Levels:
     - {fileID: 1604146361756282014, guid: 97f0615ad31cec04cb8ab12f56572abe, type: 3}
     - {fileID: 1604146361756282014, guid: 53ac2b41d4e29194e82b7fae3d19bd0a, type: 3}

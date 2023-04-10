@@ -1,7 +1,6 @@
 using Assets.Game.Scripts.Entity.Character;
 using Assets.Game.Scripts.Services;
 using Assets.Game.Scripts.State;
-using Packages.Rider.Editor.UnitTesting;
 using UnityEngine;
 
 namespace Assets.Game.Scripts

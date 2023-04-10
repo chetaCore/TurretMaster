@@ -64,7 +64,7 @@ namespace Assets.Game.Scripts.Services.SavesService
         }
 
         public string GetSavedSceneName() =>
-           _levelLoadData.ScenesAndLevels[CurrentScene].Scene.name;
+           _levelLoadData.ScenesAndLevels[CurrentScene].Scene;
 
         public GameObject GetSavedLevel() =>
                _levelLoadData.ScenesAndLevels[CurrentScene].

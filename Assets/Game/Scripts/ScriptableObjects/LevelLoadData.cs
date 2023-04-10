@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
+
 
 [CreateAssetMenu(fileName = "LevelLoadData", menuName = "LevelData/LevelLoadData")]
 public class LevelLoadData : ScriptableObject
@@ -13,7 +13,7 @@ public class LevelLoadData : ScriptableObject
     [System.Serializable]
     public struct SceneLevelsStruct 
     {
-        public SceneAsset Scene;
+        public string Scene;
         public List<GameObject> Levels;
     }
 }
