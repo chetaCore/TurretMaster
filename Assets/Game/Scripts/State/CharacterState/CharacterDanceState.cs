@@ -20,6 +20,7 @@ namespace Assets.Game.Scripts.State.CharacterState
             {
                 if (_ == GameLoopState.GameStarted)
                 {
+                    transform.position = GameObject.FindGameObjectWithTag(Constans.LevelPlayerPoint).transform.position;
                     _characterStateMachine.Enter<CharacterMovingState>();
                 }
             };
@@ -33,6 +34,7 @@ namespace Assets.Game.Scripts.State.CharacterState
             {
                 if (_ == GameLoopState.GameStarted)
                 {
+                    transform.position = GameObject.FindGameObjectWithTag(Constans.LevelPlayerPoint).transform.position;
                     _characterStateMachine.Enter<CharacterMovingState>();
                 }
             };

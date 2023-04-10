@@ -10,7 +10,6 @@ namespace Assets.Game.Scripts.State
 {
     public class LoadLevelState : IPayLoadedState<string>
     {
-        private const string PlayerSpawnPoint = "PlayerSpawnPoint";
         private readonly GameStateMachine _stateMachine;
         private readonly SceneLoader _sceneLoader;
         private readonly PopupController _popupController;
@@ -36,7 +35,7 @@ namespace Assets.Game.Scripts.State
 
         private void OnLoaded()
         {
-            _gameObjectKeeperService.Player = _gameFactory.CreateHero(GameObject.FindWithTag(PlayerSpawnPoint));
+            _gameObjectKeeperService.Player = _gameFactory.CreateHero(GameObject.FindWithTag(Constans.PlayerSpawnPoint));
             _gameFactory.CreateOverlayPopup();
             _gameFactory.CreateStartPopup();
             _gameFactory.CreateStagePopup();

@@ -1,8 +1,6 @@
 ﻿using Assets.Game.Scripts.GamePlay;
 using Assets.Game.Scripts.Services.GameLoopService;
-using Assets.Game.Scripts.Services.SavesService;
 using Assets.Game.Scripts.Services.SpawnService;
-using DG.Tweening;
 using UnityEngine;
 
 namespace Assets.Game.Scripts.Services.GameObjectKeeperService
@@ -14,7 +12,6 @@ namespace Assets.Game.Scripts.Services.GameObjectKeeperService
         private GameObject _player;
         private ISpawnEnemyService _spawnEnemyServise;
         private IGameLoopService _gameLoopService;
-        private ILevelsService _levelService;
 
         private int _countLivingEnemy;
 
@@ -22,25 +19,7 @@ namespace Assets.Game.Scripts.Services.GameObjectKeeperService
         {
             _spawnEnemyServise = AllServices.Container.Single<ISpawnEnemyService>();
             _gameLoopService = AllServices.Container.Single<IGameLoopService>();
-            _levelService = AllServices.Container.Single<ILevelsService>();
             _spawnEnemyServise.AllEnemySpawnedEvent += (int value) => CountLivingEnemy = value;
-            _gameLoopService.GameLoopStateChangedEvent += (_) =>
-            {
-                if (_ == GameLoopState.GameStarted)
-                    foreach (var LevelPlayerPoint in GameObject.FindGameObjectsWithTag("LevelPlayerPoint"))
-                    {
-                        if (LevelPlayerPoint.GetComponent<LevelPlayerPoint>().Id == _levelService.CurrentLevel)
-                        {
-                            DOTween.Sequence().AppendInterval(0).
-                            OnComplete(() =>
-                            {
-                                while (_player.gameObject.transform.position != LevelPlayerPoint.transform.position)
-                                    _player.gameObject.transform.position = LevelPlayerPoint.transform.position;
-                            });
-                            break;
-                        }
-                    }
-            };
         }
 
         public TurretData SelectedTurretData { get => _selectedTurretData; set => _selectedTurretData = value; }

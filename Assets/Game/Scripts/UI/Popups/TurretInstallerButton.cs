@@ -3,7 +3,6 @@ using Assets.Game.Scripts.Services;
 using Assets.Game.Scripts.Services.GameLoopService;
 using Assets.Game.Scripts.Services.GameObjectKeeperService;
 using DG.Tweening;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,6 +10,7 @@ namespace Assets.Game.Scripts.UI.Popups
 {
     public class TurretInstallerButton : MonoBehaviour
     {
+        [SerializeField] private GameObject _installOBj;
         [SerializeField] private Button _installButton;
         [SerializeField] private Image _installButtonImage;
         private TurrentInstaller _turrentInstaller;
@@ -50,11 +50,43 @@ namespace Assets.Game.Scripts.UI.Popups
 
         private void Initialize(GameLoopState gameLoopState)
         {
-            if (gameLoopState != GameLoopState.GameStarted) return;
+            switch (gameLoopState)
+            {
+                case GameLoopState.VaitingStartGame:
+                    break;
 
-            _turretData = _gameObjectKeeperService.SelectedTurretData;
-            _installButtonImage.sprite = _turretData.Sprite;
-            _installButtonImage.color = Constans.ReadyColor;
+                case GameLoopState.GameStarted:
+                    _turretData = _gameObjectKeeperService.SelectedTurretData;
+                    _installButtonImage.sprite = _turretData.Sprite;
+                    _installButtonImage.color = Constans.ReadyColor;
+                    break;
+
+                case GameLoopState.StageEnded:
+                    break;
+
+                case GameLoopState.VaitingNextStage:
+                    _installOBj.SetActive(false);
+                    break;
+
+                case GameLoopState.StageStarted:
+                    _installOBj.SetActive(true);
+                    break;
+
+                case GameLoopState.Defeat:
+                    break;
+
+                case GameLoopState.Victory:
+                    break;
+
+                case GameLoopState.VaitingRestartGame:
+                    break;
+
+                case GameLoopState.VaitingNextLevel:
+                    break;
+
+                default:
+                    break;
+            }
         }
     }
 }

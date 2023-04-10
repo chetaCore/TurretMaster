@@ -22,11 +22,39 @@ namespace Assets.Game.Scripts.UI.Popups
 
         private void ChangeActivity(GameLoopState gameLoopState)
         {
-            if (gameLoopState == GameLoopState.GameStarted)
-                _popupGroup.SetActive(true);
+            switch (gameLoopState)
+            {
+                case GameLoopState.VaitingStartGame:
+                    _popupGroup.SetActive(false);
+                    break;
 
-            if (gameLoopState == GameLoopState.VaitingStartGame)
-                _popupGroup.SetActive(false);
+                case GameLoopState.GameStarted:
+                    _popupGroup.SetActive(true);
+                    break;
+
+                case GameLoopState.StageEnded:
+                    _popupGroup.SetActive(false);
+                    break;
+
+                case GameLoopState.VaitingNextStage:
+                    _popupGroup.SetActive(true);
+                    break;
+
+                case GameLoopState.StageStarted:
+                    _popupGroup.SetActive(true);
+                    break;
+
+                case GameLoopState.Defeat:
+                    _popupGroup.SetActive(false);
+                    break;
+
+                case GameLoopState.Victory:
+                    _popupGroup.SetActive(false);
+                    break;
+
+                default:
+                    break;
+            }
         }
     }
 }
