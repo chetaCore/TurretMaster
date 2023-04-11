@@ -15,6 +15,7 @@ namespace Assets.Game.Scripts.Entity.BaseEntityScripts
         private float _maxHp;
         private float _currentHP;
         private GameObject _model;
+        private bool _isDead;
         protected IGameObjectKeeperService _gameObjectKeeperService;
 
         public GameObject Model { get => _model; }
@@ -39,12 +40,17 @@ namespace Assets.Game.Scripts.Entity.BaseEntityScripts
 
         public virtual void TakeDamage(float damage)
         {
+            if (_isDead) return;
+
             CurrentHP -= damage;
             TakeDamageEvent?.Invoke();
 
             if (CurrentHP <= 0)
             {
-                Destroy(gameObject);
+                _isDead = true;
+                DeathEvent?.Invoke();
+
+                Destroy(gameObject, 3f);
             }
         }
     }

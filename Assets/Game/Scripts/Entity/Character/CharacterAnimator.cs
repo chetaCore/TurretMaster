@@ -11,6 +11,7 @@ namespace Assets.Game.Scripts.Entity.Character
         private static readonly int Install = Animator.StringToHash("TurretInstall");
         private static readonly int Idle = Animator.StringToHash("Idle");
         private static readonly int Dance = Animator.StringToHash("Dance");
+        private static readonly int Death = Animator.StringToHash("Death");
 
         public CharacterMover CharacterMover { get => _characterMover; set => _characterMover = value; }
 
@@ -34,6 +35,10 @@ namespace Assets.Game.Scripts.Entity.Character
             _animator.SetTrigger(Dance);
         }
 
+        public void PlayDeath()
+        {
+            _animator.SetTrigger(Death);
+        }
 
         private void Update()
         {

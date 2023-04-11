@@ -29,6 +29,8 @@ namespace Assets.Game.Scripts.Services.GameObjectKeeperService
 
         public void DecreaseCountLivingEnemy()
         {
+            if (_gameLoopService.ActiveState == GameLoopState.Defeat) return;
+
             CountLivingEnemy--;
             if (CountLivingEnemy <= 0)
                 if (_spawnEnemyServise.CurrentStage == _spawnEnemyServise.CountStage)

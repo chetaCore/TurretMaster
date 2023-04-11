@@ -12,13 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fb5a7c6721333b449943c8fb978ff1f, type: 3}
   m_Name: TurretLazer
   m_EditorClassIdentifier: 
+  _usertype: 0
   _type: 2
   _targetMask:
     serializedVersion: 2
     m_Bits: 256
-  _ignoreMask:
-    serializedVersion: 2
-    m_Bits: 576
   _damage: 0.1
   _width: 0.1
   _length: 25

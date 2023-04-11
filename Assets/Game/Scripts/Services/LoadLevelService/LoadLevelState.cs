@@ -1,5 +1,4 @@
 ﻿using Assets.Game.Scripts.Infrastructure.GameFactory;
-using Assets.Game.Scripts.Infrastructure.LevelTest;
 using Assets.Game.Scripts.Services;
 using Assets.Game.Scripts.Services.GameObjectKeeperService;
 using Assets.Game.Scripts.Services.VirtualCamerasService;
@@ -15,7 +14,6 @@ namespace Assets.Game.Scripts.State
         private readonly PopupController _popupController;
         private readonly IGameFactory _gameFactory;
         private readonly IGameObjectKeeperService _gameObjectKeeperService;
-
 
         public LoadLevelState(GameStateMachine stateMachine, SceneLoader sceneLoader, PopupController popupController, IGameFactory gameFactory)
         {
@@ -40,8 +38,9 @@ namespace Assets.Game.Scripts.State
             _gameFactory.CreateStartPopup();
             _gameFactory.CreateStagePopup();
             _gameFactory.CreateVictoryPopup();
+            _gameFactory.CreateDefeatPopup();
             AllServices.Container.Single<IVirtualsCamerasService>().CreateCameras();
-           
+
             _stateMachine.Enter<GameLoopState>();
         }
 

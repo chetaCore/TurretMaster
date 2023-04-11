@@ -26,8 +26,8 @@ namespace Assets.Game.Scripts.Services.SpawnService
         private int _currentStage;
         private int _countStage;
 
-        public int CurrentStage { get => _currentStage;}
-        public int CountStage { get => _countStage;}
+        public int CurrentStage { get => _currentStage; }
+        public int CountStage { get => _countStage; }
 
         public SpawnEnemyService()
         {
@@ -64,8 +64,10 @@ namespace Assets.Game.Scripts.Services.SpawnService
         {
             if (gameLoopState == GameLoopState.GameStarted)
             {
+                _countStage = 0;
                 SetCountStage();
                 _currentStage = 0;
+                Debug.Log(_countStage);
             }
 
             if (gameLoopState != GameLoopState.GameStarted && gameLoopState != GameLoopState.StageStarted) return;
@@ -132,18 +134,15 @@ namespace Assets.Game.Scripts.Services.SpawnService
         private void SetCountStage()
         {
             while (_assets.GetAllScriptObject
-                (
-                    Constans.SpawnScriptableObjectsScenesPath + _levelsService.CurrentScene +
-                    Constans.SpawnScriptableObjectsLevelsPath + _levelsService.CurrentLevel +
-                    Constans.SpawnScriptableObjectsStagesPath + _countStage
-                ).Length != 0
-                
+                    (
+                        Constans.SpawnScriptableObjectsScenesPath + _levelsService.CurrentScene +
+                        Constans.SpawnScriptableObjectsLevelsPath + _levelsService.CurrentLevel +
+                        Constans.SpawnScriptableObjectsStagesPath + _countStage
+                    ).Length != 0
                 )
             {
                 _countStage++;
             }
-
-          
         }
     }
 }

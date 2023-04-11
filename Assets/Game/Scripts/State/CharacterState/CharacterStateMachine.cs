@@ -28,7 +28,7 @@ namespace Assets.Game.Scripts.State.CharacterState
                 gameObject.AddComponent<CharacterInstallState>().Initialize(this, turrentInstaller, animator),
 
                 [typeof(CharacterDeathState)] =
-                gameObject.AddComponent<CharacterDeathState>().Initialize(this),
+                gameObject.AddComponent<CharacterDeathState>().Initialize(this, animator),
 
                 [typeof(CharacterDanceState)] =
                 gameObject.AddComponent<CharacterDanceState>().Initialize(this, animator),
