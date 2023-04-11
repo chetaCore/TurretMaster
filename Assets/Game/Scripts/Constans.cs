@@ -10,7 +10,7 @@ namespace Assets.Game.Scripts
         public const string StageStarerName = "StageStarter";
         public const string PlayerSpawnPoint = "PlayerSpawnPoint";
         public static string LevelPlayerPoint = "LevelPlayerPoint";
-        public const float TurretOpeningFactor = 1f;
+        public const float TurretOpeningFactor = 0.5f;
 
         public static Color ClosedColor { get => Color.black; }
         public static Color OpenColor { get => Color.white; }
@@ -34,6 +34,9 @@ namespace Assets.Game.Scripts
 
         //VictoryPopupPath
         public const string VictoryPopupPath = "Prefabs/UI/Popups/VictoryPopup";
+
+        //DefeatPopupPath
+        public const string DefeatPopupPath = "Prefabs/UI/Popups/DefeatPopup";
 
         #endregion PopupsPath
 

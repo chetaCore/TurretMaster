@@ -17,7 +17,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   _speed: 10
-  _hp: 5
+  _hp: 20
   _fieldOfView: 500
   _detectionInterval: 2
   _timeToTurn: 500

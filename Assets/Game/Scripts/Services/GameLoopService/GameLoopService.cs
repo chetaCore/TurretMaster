@@ -13,7 +13,7 @@ namespace Assets.Game.Scripts.Services.GameLoopService
             ChangeGameLoopState(GameLoopState.VaitingStartGame);
         }
 
-        private GameLoopState ActiveState { get => _activeState; }
+        public GameLoopState ActiveState { get => _activeState; }
 
         public event Action<GameLoopState> GameLoopStateChangedEvent;
 

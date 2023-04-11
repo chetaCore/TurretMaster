@@ -71,7 +71,7 @@ namespace Assets.Game.Scripts.UI.Popups
         private void OnDestroy()
         {
             _startButton.onClick.RemoveListener(StartGame);
-
+            _gameLoopService.GameLoopStateChangedEvent -= ActivatePopup;
             _simpleScrollSnap.OnPanelSelecting.RemoveListener(_ =>
             {
                 PanelOpennesCheck();

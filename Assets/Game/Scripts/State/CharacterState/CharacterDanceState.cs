@@ -16,28 +16,23 @@ namespace Assets.Game.Scripts.State.CharacterState
             _animator = animator;
             _characterStateMachine = characterStateMachine;
             _gameLoopService = AllServices.Container.Single<IGameLoopService>();
-            _gameLoopService.GameLoopStateChangedEvent += (_) =>
-            {
-                if (_ == GameLoopState.GameStarted)
-                {
-                    transform.position = GameObject.FindGameObjectWithTag(Constans.LevelPlayerPoint).transform.position;
-                    _characterStateMachine.Enter<CharacterMovingState>();
-                }
-            };
+            _gameLoopService.GameLoopStateChangedEvent += GameLoopBehavior;
 
             return this;
         }
 
         private void OnDestroy()
         {
-            _gameLoopService.GameLoopStateChangedEvent -= (_) =>
+            _gameLoopService.GameLoopStateChangedEvent -= GameLoopBehavior;
+        }
+
+        private void GameLoopBehavior(GameLoopState gameLoopState)
+        {
+            if (gameLoopState == GameLoopState.GameStarted)
             {
-                if (_ == GameLoopState.GameStarted)
-                {
-                    transform.position = GameObject.FindGameObjectWithTag(Constans.LevelPlayerPoint).transform.position;
-                    _characterStateMachine.Enter<CharacterMovingState>();
-                }
-            };
+                transform.position = GameObject.FindGameObjectWithTag(Constans.LevelPlayerPoint).transform.position;
+                _characterStateMachine.Enter<CharacterMovingState>();
+            }
         }
 
         public void Enter()

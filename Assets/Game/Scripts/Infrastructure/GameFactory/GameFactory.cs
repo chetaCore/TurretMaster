@@ -308,6 +308,9 @@ namespace Assets.Game.Scripts.Infrastructure.GameFactory
         public GameObject CreateVictoryPopup() =>
            _assets.Instantiate(Constans.VictoryPopupPath);
 
+        public GameObject CreateDefeatPopup() => 
+            _assets.Instantiate(Constans.DefeatPopupPath);
+
         public GameObject CreateVirtualsCameras() =>
             _assets.Instantiate(Constans.VirtualsCamerasPath);
     }

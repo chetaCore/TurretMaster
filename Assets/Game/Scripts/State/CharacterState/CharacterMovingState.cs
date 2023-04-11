@@ -19,29 +19,29 @@ namespace Assets.Game.Scripts.State.CharacterState
             _turretInstaller = turrentInstaller;
 
             _gameLoopService = AllServices.Container.Single<IGameLoopService>();
-            _gameLoopService.GameLoopStateChangedEvent += (_) =>
-            {
-                if (_ == GameLoopState.VaitingStartGame || _ == GameLoopState.StageEnded || _ == GameLoopState.Victory)
-                {
-                    _characterStateMachine.Enter<CharacterIdleState>();
-                }
-            };
-
-            _turretInstaller.StartInstallEvent += () => _characterStateMachine.Enter<CharacterInstallState>();
+            _gameLoopService.GameLoopStateChangedEvent += GameLoopBehaviour;
+            _turretInstaller.StartInstallEvent += GoToIdleState;
 
             return this;
         }
 
         private void OnDestroy()
         {
-            _gameLoopService.GameLoopStateChangedEvent -= (_) =>
+            _gameLoopService.GameLoopStateChangedEvent -= GameLoopBehaviour;
+            _turretInstaller.StartInstallEvent += GoToIdleState;
+        }
+
+        private void GoToIdleState()
+        {
+            _characterStateMachine.Enter<CharacterInstallState>();
+        }
+
+        private void GameLoopBehaviour(GameLoopState gameLoopstate)
+        {
+            if (gameLoopstate == GameLoopState.VaitingStartGame || gameLoopstate == GameLoopState.StageEnded || gameLoopstate == GameLoopState.Victory)
             {
-                if (_ == GameLoopState.VaitingStartGame || _ == GameLoopState.StageEnded || _ == GameLoopState.Victory)
-                {
-                    _characterStateMachine.Enter<CharacterIdleState>();
-                }
-                _turretInstaller.StartInstallEvent -= () => _characterStateMachine.Enter<CharacterInstallState>();
-            };
+                _characterStateMachine.Enter<CharacterIdleState>();
+            }
         }
 
         public void Enter()
@@ -52,7 +52,7 @@ namespace Assets.Game.Scripts.State.CharacterState
         public void Exit()
         {
             _characterMover.CanMove = false;
-            _characterMover.Controller.Move(Vector3.zero);
+            //_characterMover.Controller.Move(Vector3.zero);
         }
     }
 }

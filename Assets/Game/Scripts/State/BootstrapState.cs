@@ -4,6 +4,7 @@ using Assets.Game.Scripts.Services;
 using Assets.Game.Scripts.Services.GameLoopService;
 using Assets.Game.Scripts.Services.GameObjectKeeperService;
 using Assets.Game.Scripts.Services.OpenTurretService;
+using Assets.Game.Scripts.Services.PerkService;
 using Assets.Game.Scripts.Services.PoolService;
 using Assets.Game.Scripts.Services.SavesService;
 using Assets.Game.Scripts.Services.SpawnService;
@@ -58,6 +59,7 @@ namespace Assets.Game.Scripts.State
             _services.RegisterSingle<IGameObjectKeeperService>(new GameObjectKeeperService());
             _services.RegisterSingle<IOpenTurretService>(new OpenTurretService());
             _services.RegisterSingle<IVirtualsCamerasService>(new VirtualsCamerasService());
+            _services.RegisterSingle<IPerksService>(new PerksService());
         }
 
         private static IInputService InputService()

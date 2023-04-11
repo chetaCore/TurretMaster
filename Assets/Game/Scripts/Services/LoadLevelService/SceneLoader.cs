@@ -9,7 +9,7 @@ namespace Assets.Game.Scripts.State
     {
         private readonly ICorutineRunner _coruoutineRunner;
 
-        public SceneLoader(ICorutineRunner coruoutineRunner) => 
+        public SceneLoader(ICorutineRunner coruoutineRunner) =>
             _coruoutineRunner = coruoutineRunner;
 
         public void Load(String name, Action onLoaded = null) =>
@@ -17,19 +17,25 @@ namespace Assets.Game.Scripts.State
 
         public IEnumerator LoadScene(String nextScene, Action onLoaded = null)
         {
-            //if(SceneManager.GetActiveScene().name == nextScene) 
+            //if (SceneManager.GetActiveScene().name == nextScene)
             //{
-                SceneManager.LoadSceneAsync(nextScene);
-              //  onLoaded?.Invoke();
-          //      yield break;
-           // }
-                
-            AsyncOperation waitNextScene = SceneManager.LoadSceneAsync(nextScene);
+            //    SceneManager.LoadSceneAsync(nextScene, LoadSceneMode.Single);
+            //    onLoaded?.Invoke();
+            //    yield break;
+            //}
+
+            AsyncOperation waitNextScene = SceneManager.LoadSceneAsync(nextScene, LoadSceneMode.Single);
 
             while (!waitNextScene.isDone)
                 yield return null;
 
             onLoaded?.Invoke();
         }
+
+        //async Task LoaderScene(string scnenName)
+        //{
+        //    await Scee
+
+        //}
     }
 }
