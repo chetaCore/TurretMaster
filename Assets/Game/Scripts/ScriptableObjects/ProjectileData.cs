@@ -3,10 +3,10 @@ using UnityEngine;
 
 public class ProjectileData : ScriptableObject
 {
-    [SerializeField] private UserType _usertype;
+    [SerializeField] private UserType _userType;
 
-    public UserType Usertype
-    { get { return _usertype; } }
+    public UserType UserType
+    { get { return _userType; } }
 
     [SerializeField] private ProjectileType _type;
 

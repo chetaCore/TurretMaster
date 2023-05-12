@@ -13,7 +13,8 @@ namespace Assets.Game.Scripts.State.EnemyState
         protected bool _isActive = false;
 
         public IState Initialize(
-            EnemyStateMachine enemyStateMachine, EnemyObserver enemyObserver, EnemyMover enemyMover, EnemyAttackTrigger enemyAttackTrigger, EnemyAnimator animator)
+            EnemyStateMachine enemyStateMachine, EnemyObserver enemyObserver, EnemyMover enemyMover, 
+            EnemyAttackTrigger enemyAttackTrigger, EnemyAnimator animator)
         {
             _enemyStateMachine = enemyStateMachine;
             _enemyObserver = enemyObserver;

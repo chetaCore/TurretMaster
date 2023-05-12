@@ -52,9 +52,4 @@ public class EnemyData : ScriptableObject
 
     public GameObject Model
     { get { return _model; } }
-
-    [SerializeField] private GameObject _rope;
-
-    public GameObject RopeModel
-    { get { return _rope; } }
 }

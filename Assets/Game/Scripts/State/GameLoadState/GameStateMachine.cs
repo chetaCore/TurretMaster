@@ -15,7 +15,7 @@ namespace Assets.Game.Scripts.State
             _states = new Dictionary<Type, IExitableState>
             {
                 [typeof(BootstrapState)] = new BootstrapState(this, sceneLoader, services),
-                [typeof(LoadLevelState)] = new LoadLevelState(this, sceneLoader, popupController, services.Single<IGameFactory>()),
+                [typeof(LoadLevelState)] = new LoadLevelState(this, sceneLoader, popupController, services.Single<IGameFactoryService>()),
                 [typeof(GameLoopState)] = new GameLoopState(this),
             };
         }

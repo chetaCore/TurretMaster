@@ -3,6 +3,6 @@
     public enum PerkType
     {
         Heal,
-        AddCharacterSpeed,
+        AddSpeed,
     }
 }

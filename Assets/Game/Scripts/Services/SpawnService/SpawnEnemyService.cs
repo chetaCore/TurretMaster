@@ -14,7 +14,7 @@ namespace Assets.Game.Scripts.Services.SpawnService
         public event Action<int> AllEnemySpawnedEvent;
 
         private const string SpawnerTag = "Spawn";
-        private readonly IGameFactory _factory;
+        private readonly IGameFactoryService _factory;
         private readonly IAssetProvider _assets;
         private readonly IGameLoopService _gameLoopService;
         private readonly ILevelsService _levelsService;
@@ -31,7 +31,7 @@ namespace Assets.Game.Scripts.Services.SpawnService
 
         public SpawnEnemyService()
         {
-            _factory = AllServices.Container.Single<IGameFactory>();
+            _factory = AllServices.Container.Single<IGameFactoryService>();
             _assets = AllServices.Container.Single<IAssetProvider>();
             _gameLoopService = AllServices.Container.Single<IGameLoopService>();
             _levelsService = AllServices.Container.Single<ILevelsService>();

@@ -72,18 +72,6 @@ namespace Assets.Game.Scripts.UI.Popups
                     _installOBj.SetActive(true);
                     break;
 
-                case GameLoopState.Defeat:
-                    break;
-
-                case GameLoopState.Victory:
-                    break;
-
-                case GameLoopState.VaitingRestartGame:
-                    break;
-
-                case GameLoopState.VaitingNextLevel:
-                    break;
-
                 default:
                     break;
             }

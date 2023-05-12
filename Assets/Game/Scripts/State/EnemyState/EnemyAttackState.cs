@@ -15,7 +15,8 @@ namespace Assets.Game.Scripts.State.EnemyState
         protected Sequence _vaitSeq;
 
         public virtual IState Initialize(
-            EnemyStateMachine enemyStateMachine, EnemyAttacker enemyAttacker, EnemyAimer enemyAimer, EnemyObserver enemyObserver, EnemyAnimator animator)
+            EnemyStateMachine enemyStateMachine, EnemyAttacker enemyAttacker,
+            EnemyAimer enemyAimer, EnemyObserver enemyObserver, EnemyAnimator animator)
         {
             _enemyStateMachine = enemyStateMachine;
             _enemyAttacker = enemyAttacker;

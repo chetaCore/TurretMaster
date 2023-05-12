@@ -12,10 +12,10 @@ namespace Assets.Game.Scripts.State
         private readonly GameStateMachine _stateMachine;
         private readonly SceneLoader _sceneLoader;
         private readonly PopupController _popupController;
-        private readonly IGameFactory _gameFactory;
+        private readonly IGameFactoryService _gameFactory;
         private readonly IGameObjectKeeperService _gameObjectKeeperService;
 
-        public LoadLevelState(GameStateMachine stateMachine, SceneLoader sceneLoader, PopupController popupController, IGameFactory gameFactory)
+        public LoadLevelState(GameStateMachine stateMachine, SceneLoader sceneLoader, PopupController popupController, IGameFactoryService gameFactory)
         {
             _stateMachine = stateMachine;
             _sceneLoader = sceneLoader;

@@ -10,7 +10,7 @@ namespace Assets.Game.Scripts.Services.VirtualCamerasService
     {
         private IAssetProvider _assetProvider;
         private IGameLoopService _gameLoopService;
-        private IGameFactory _gameFactory;
+        private IGameFactoryService _gameFactory;
 
 
         GameObject _virtualsCamerasPrefab;
@@ -19,7 +19,7 @@ namespace Assets.Game.Scripts.Services.VirtualCamerasService
         {
             _assetProvider = AllServices.Container.Single<IAssetProvider>();
             _gameLoopService = AllServices.Container.Single<IGameLoopService>();
-            _gameFactory = AllServices.Container.Single<IGameFactory>();
+            _gameFactory = AllServices.Container.Single<IGameFactoryService>();
 
             _gameLoopService.GameLoopStateChangedEvent += (_) =>
             {

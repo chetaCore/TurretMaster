@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: LaserTurret
   m_EditorClassIdentifier: 
   _id: 1
-  _openingProgress: 100
+  _openingProgress: 0
   _type: 1
   _targetMask:
     serializedVersion: 2

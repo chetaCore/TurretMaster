@@ -16,6 +16,8 @@ namespace Assets.Game.Scripts
         public static Color OpenColor { get => Color.white; }
         public static Color ReadyColor { get => Color.green; }
 
+        //Perks
+        public static readonly float CharacterSpeedIncreaseFactor = 1.1f;
         #region Paths
 
         //PlayerPath

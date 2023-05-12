@@ -10,7 +10,7 @@ namespace Assets.Game.Scripts.State
 
         public abstract Vector2 Axis { get; }
 
-        bool IInputService.IsBuildButtonDown() => Input.GetKeyDown(KeyCode.Q);//SimpleInput.GetButton(Input.GetKeyDown(KeyCode.Q));
+        bool IInputService.IsBuildButtonDown() => Input.GetKeyDown(KeyCode.Q);
 
         protected static Vector2 SimpleInputAxis() => new Vector2(SimpleInput.GetAxis(Horizontal), SimpleInput.GetAxis(Vertical));
     }

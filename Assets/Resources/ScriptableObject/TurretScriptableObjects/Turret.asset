@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Turret
   m_EditorClassIdentifier: 
   _id: 0
-  _openingProgress: 100
+  _openingProgress: 0
   _type: 0
   _targetMask:
     serializedVersion: 2

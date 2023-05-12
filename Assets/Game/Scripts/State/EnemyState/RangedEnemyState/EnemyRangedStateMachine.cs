@@ -7,7 +7,8 @@ namespace Assets.Game.Scripts.State.EnemyState.RangedEnemyState
 {
     public class EnemyRangedStateMachine : EnemyStateMachine
     {
-        public override void Initialize(EnemyObserver enemyObserver, EnemyMover enemyMover, EnemyAttackTrigger enemyAttackTrigger, EnemyAttacker enemyAttacker, EnemyAimer enemyAimer, EnemyAnimator animator, EnemyDeath enemyDeath, Enemy enemy)
+        public override void Initialize(EnemyObserver enemyObserver, EnemyMover enemyMover, EnemyAttackTrigger enemyAttackTrigger,
+            EnemyAttacker enemyAttacker, EnemyAimer enemyAimer, EnemyAnimator animator, EnemyDeath enemyDeath, Enemy enemy)
         {
             _enemy = enemy;
 

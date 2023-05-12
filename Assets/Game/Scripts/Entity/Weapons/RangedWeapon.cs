@@ -10,7 +10,7 @@ public class RangedWeapon : Weapon
 {
     public bool CanShoot = true;
 
-    private IGameFactory _factory;
+    private IGameFactoryService _factory;
 
     private ProjectileType _bulletType;
     private float _rateOfFire;
@@ -23,7 +23,7 @@ public class RangedWeapon : Weapon
 
     private void Awake()
     {
-        _factory = AllServices.Container.Single<IGameFactory>();
+        _factory = AllServices.Container.Single<IGameFactoryService>();
     }
 
     public void Shoot()

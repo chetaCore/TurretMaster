@@ -52,7 +52,7 @@ namespace Assets.Game.Scripts.State
             _services.RegisterSingle<ILevelsService>(new LevelsService());
             _services.RegisterSingle<IInputService>(InputService());
             _services.RegisterSingle<IGameStateMachine>(_stateMachine);
-            _services.RegisterSingle<IGameFactory>(new GameFactory(AllServices.Container.Single<IAssetProvider>()));
+            _services.RegisterSingle<IGameFactoryService>(new GameFactoryService(AllServices.Container.Single<IAssetProvider>()));
             _services.RegisterSingle<IPoolService>(new PoolService());
             _services.RegisterSingle<ILevelTransferService>(new LevelTransferService());
             _services.RegisterSingle<ISpawnEnemyService>(new SpawnEnemyService());

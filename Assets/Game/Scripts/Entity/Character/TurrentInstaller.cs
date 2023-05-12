@@ -11,7 +11,7 @@ namespace Assets.Game.Scripts.Entity.Turret
     {
         public event Action StartInstallEvent;
 
-        private IGameFactory _factory;
+        private IGameFactoryService _factory;
 
         private IGameObjectKeeperService _gameObjectKeeperService;
 
@@ -25,7 +25,7 @@ namespace Assets.Game.Scripts.Entity.Turret
 
         private void Awake()
         {
-            _factory = AllServices.Container.Single<IGameFactory>();
+            _factory = AllServices.Container.Single<IGameFactoryService>();
             _gameObjectKeeperService = AllServices.Container.Single<IGameObjectKeeperService>();
         }
 

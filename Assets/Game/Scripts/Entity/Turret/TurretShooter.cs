@@ -12,7 +12,7 @@ namespace Assets.Game.Scripts.Entity.Character
         public bool CanShoot;
 
         private IPoolService _pullService;
-        protected IGameFactory _factory;
+        protected IGameFactoryService _factory;
 
         protected ProjectileType _projectileType;
         protected float _rateOfFire;
@@ -27,7 +27,7 @@ namespace Assets.Game.Scripts.Entity.Character
         private void Awake()
         {
             _pullService = AllServices.Container.Single<IPoolService>();
-            _factory = AllServices.Container.Single<IGameFactory>();
+            _factory = AllServices.Container.Single<IGameFactoryService>();
         }
 
 
@@ -47,10 +47,8 @@ namespace Assets.Game.Scripts.Entity.Character
 
         protected virtual void UseProjectile()
         {
-            // var bullet = _pullService.Pool.Get();
             var bullet = _factory.CreateBullet(_burrel.transform.position, _projectileType);
             bullet.transform.SetPositionAndRotation(_burrel.transform.position, _burrel.rotation);
-            //DOTween.Sequence().AppendInterval(_bullet.LifeTime).OnComplete(() => Destroy(bullet));
         }
     }
 }

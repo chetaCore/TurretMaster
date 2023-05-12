@@ -10,9 +10,11 @@ namespace Assets.Game.Scripts.GamePlay
         [SerializeField] private GameObject _DoorToNext;
 
         private IGameLoopService _gameLoopService;
+        private bool _isActive;
 
         public int Id;
-        public bool IsActive;
+
+        public bool IsActive { get => _isActive; set => _isActive = value; }
 
         private void Awake()
         {

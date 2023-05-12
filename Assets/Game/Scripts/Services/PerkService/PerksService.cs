@@ -5,8 +5,6 @@ namespace Assets.Game.Scripts.Services.PerkService
 {
     public class PerksService : IPerksService
     {
-        private const float CharacterSpeedIncreaseFactor = 1.1f;
-
         public void PerkSelector(PerkType perkType, GameObject perkObject)
         {
             switch (perkType)
@@ -15,7 +13,7 @@ namespace Assets.Game.Scripts.Services.PerkService
                     Heal(perkObject);
                     break;
 
-                case PerkType.AddCharacterSpeed:
+                case PerkType.AddSpeed:
                     AddSpeed(perkObject);
                     break;
 
@@ -26,7 +24,7 @@ namespace Assets.Game.Scripts.Services.PerkService
 
         private void AddSpeed(GameObject perkObject)
         {
-            perkObject.GetComponent<BaseEntity>().Speed *= CharacterSpeedIncreaseFactor;
+            perkObject.GetComponent<BaseEntity>().Speed *= Constans.CharacterSpeedIncreaseFactor;
         }
 
         private void Heal(GameObject perkObject)
